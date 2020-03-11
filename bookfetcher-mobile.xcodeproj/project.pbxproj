@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBCD9172241828B100FBC0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9171241828B100FBC0C5 /* AppDelegate.swift */; };
+		EBCD9174241828B100FBC0C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9173241828B100FBC0C5 /* SceneDelegate.swift */; };
+		EBCD9176241828B100FBC0C5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9175241828B100FBC0C5 /* SearchViewController.swift */; };
+		EBCD9178241828B100FBC0C5 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9177241828B100FBC0C5 /* SavedViewController.swift */; };
+		EBCD917D241828B300FBC0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCD917C241828B300FBC0C5 /* Assets.xcassets */; };
+		EBCD918B241828B300FBC0C5 /* bookfetcher_mobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD918A241828B300FBC0C5 /* bookfetcher_mobileTests.swift */; };
+		EBCD9196241828B300FBC0C5 /* bookfetcher_mobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9195241828B300FBC0C5 /* bookfetcher_mobileUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBCD9187241828B300FBC0C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBCD9166241828B100FBC0C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBCD916D241828B100FBC0C5;
+			remoteInfo = "bookfetcher-mobile";
+		};
+		EBCD9192241828B300FBC0C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBCD9166241828B100FBC0C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBCD916D241828B100FBC0C5;
+			remoteInfo = "bookfetcher-mobile";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBCD916E241828B100FBC0C5 /* bookfetcher-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bookfetcher-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCD9171241828B100FBC0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBCD9173241828B100FBC0C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBCD9175241828B100FBC0C5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EBCD9177241828B100FBC0C5 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		EBCD917C241828B300FBC0C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBCD9181241828B300FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBCD9186241828B300FBC0C5 /* bookfetcher-mobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookfetcher-mobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCD918A241828B300FBC0C5 /* bookfetcher_mobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookfetcher_mobileTests.swift; sourceTree = "<group>"; };
+		EBCD918C241828B300FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBCD9191241828B300FBC0C5 /* bookfetcher-mobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookfetcher-mobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCD9195241828B300FBC0C5 /* bookfetcher_mobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookfetcher_mobileUITests.swift; sourceTree = "<group>"; };
+		EBCD9197241828B300FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBCD916B241828B100FBC0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCD9183241828B300FBC0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCD918E241828B300FBC0C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBCD9165241828B100FBC0C5 = {
+			isa = PBXGroup;
+			children = (
+				EBCD9170241828B100FBC0C5 /* bookfetcher-mobile */,
+				EBCD9189241828B300FBC0C5 /* bookfetcher-mobileTests */,
+				EBCD9194241828B300FBC0C5 /* bookfetcher-mobileUITests */,
+				EBCD916F241828B100FBC0C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBCD916F241828B100FBC0C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD916E241828B100FBC0C5 /* bookfetcher-mobile.app */,
+				EBCD9186241828B300FBC0C5 /* bookfetcher-mobileTests.xctest */,
+				EBCD9191241828B300FBC0C5 /* bookfetcher-mobileUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBCD9170241828B100FBC0C5 /* bookfetcher-mobile */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD9171241828B100FBC0C5 /* AppDelegate.swift */,
+				EBCD9173241828B100FBC0C5 /* SceneDelegate.swift */,
+				EBCD9175241828B100FBC0C5 /* SearchViewController.swift */,
+				EBCD9177241828B100FBC0C5 /* SavedViewController.swift */,
+				EBCD917C241828B300FBC0C5 /* Assets.xcassets */,
+				EBCD9181241828B300FBC0C5 /* Info.plist */,
+			);
+			path = "bookfetcher-mobile";
+			sourceTree = "<group>";
+		};
+		EBCD9189241828B300FBC0C5 /* bookfetcher-mobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD918A241828B300FBC0C5 /* bookfetcher_mobileTests.swift */,
+				EBCD918C241828B300FBC0C5 /* Info.plist */,
+			);
+			path = "bookfetcher-mobileTests";
+			sourceTree = "<group>";
+		};
+		EBCD9194241828B300FBC0C5 /* bookfetcher-mobileUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBCD9195241828B300FBC0C5 /* bookfetcher_mobileUITests.swift */,
+				EBCD9197241828B300FBC0C5 /* Info.plist */,
+			);
+			path = "bookfetcher-mobileUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCD919A241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobile" */;
+			buildPhases = (
+				EBCD916A241828B100FBC0C5 /* Sources */,
+				EBCD916B241828B100FBC0C5 /* Frameworks */,
+				EBCD916C241828B100FBC0C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bookfetcher-mobile";
+			productName = "bookfetcher-mobile";
+			productReference = EBCD916E241828B100FBC0C5 /* bookfetcher-mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBCD9185241828B300FBC0C5 /* bookfetcher-mobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCD919D241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobileTests" */;
+			buildPhases = (
+				EBCD9182241828B300FBC0C5 /* Sources */,
+				EBCD9183241828B300FBC0C5 /* Frameworks */,
+				EBCD9184241828B300FBC0C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBCD9188241828B300FBC0C5 /* PBXTargetDependency */,
+			);
+			name = "bookfetcher-mobileTests";
+			productName = "bookfetcher-mobileTests";
+			productReference = EBCD9186241828B300FBC0C5 /* bookfetcher-mobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBCD9190241828B300FBC0C5 /* bookfetcher-mobileUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCD91A0241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobileUITests" */;
+			buildPhases = (
+				EBCD918D241828B300FBC0C5 /* Sources */,
+				EBCD918E241828B300FBC0C5 /* Frameworks */,
+				EBCD918F241828B300FBC0C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBCD9193241828B300FBC0C5 /* PBXTargetDependency */,
+			);
+			name = "bookfetcher-mobileUITests";
+			productName = "bookfetcher-mobileUITests";
+			productReference = EBCD9191241828B300FBC0C5 /* bookfetcher-mobileUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBCD9166241828B100FBC0C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Monica Debbeler";
+				TargetAttributes = {
+					EBCD916D241828B100FBC0C5 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					EBCD9185241828B300FBC0C5 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EBCD916D241828B100FBC0C5;
+					};
+					EBCD9190241828B300FBC0C5 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EBCD916D241828B100FBC0C5;
+					};
+				};
+			};
+			buildConfigurationList = EBCD9169241828B100FBC0C5 /* Build configuration list for PBXProject "bookfetcher-mobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBCD9165241828B100FBC0C5;
+			productRefGroup = EBCD916F241828B100FBC0C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */,
+				EBCD9185241828B300FBC0C5 /* bookfetcher-mobileTests */,
+				EBCD9190241828B300FBC0C5 /* bookfetcher-mobileUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBCD916C241828B100FBC0C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCD917D241828B300FBC0C5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCD9184241828B300FBC0C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCD918F241828B300FBC0C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBCD916A241828B100FBC0C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCD9178241828B100FBC0C5 /* SavedViewController.swift in Sources */,
+				EBCD9176241828B100FBC0C5 /* SearchViewController.swift in Sources */,
+				EBCD9172241828B100FBC0C5 /* AppDelegate.swift in Sources */,
+				EBCD9174241828B100FBC0C5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCD9182241828B300FBC0C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCD918B241828B300FBC0C5 /* bookfetcher_mobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCD918D241828B300FBC0C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCD9196241828B300FBC0C5 /* bookfetcher_mobileUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBCD9188241828B300FBC0C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */;
+			targetProxy = EBCD9187241828B300FBC0C5 /* PBXContainerItemProxy */;
+		};
+		EBCD9193241828B300FBC0C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */;
+			targetProxy = EBCD9192241828B300FBC0C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EBCD9198241828B300FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBCD9199241828B300FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBCD919B241828B300FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "bookfetcher-mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBCD919C241828B300FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "bookfetcher-mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBCD919E241828B300FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "bookfetcher-mobileTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookfetcher-mobile.app/bookfetcher-mobile";
+			};
+			name = Debug;
+		};
+		EBCD919F241828B300FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "bookfetcher-mobileTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookfetcher-mobile.app/bookfetcher-mobile";
+			};
+			name = Release;
+		};
+		EBCD91A1241828B300FBC0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "bookfetcher-mobileUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobileUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "bookfetcher-mobile";
+			};
+			name = Debug;
+		};
+		EBCD91A2241828B300FBC0C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "bookfetcher-mobileUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobileUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "bookfetcher-mobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBCD9169241828B100FBC0C5 /* Build configuration list for PBXProject "bookfetcher-mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCD9198241828B300FBC0C5 /* Debug */,
+				EBCD9199241828B300FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCD919A241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCD919B241828B300FBC0C5 /* Debug */,
+				EBCD919C241828B300FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCD919D241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCD919E241828B300FBC0C5 /* Debug */,
+				EBCD919F241828B300FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCD91A0241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobileUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCD91A1241828B300FBC0C5 /* Debug */,
+				EBCD91A2241828B300FBC0C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBCD9166241828B100FBC0C5 /* Project object */;
+}
