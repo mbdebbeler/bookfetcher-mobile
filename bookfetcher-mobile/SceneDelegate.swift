@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         // create your new view controller
         // embedded in a nav controller
-        let initialViewController = UINavigationController(rootViewController: SearchViewController())
+        let initialViewController = UITabBarController()
+        initialViewController.viewControllers = [SearchViewController(), SavedViewController()]
         // make a new window with the correct frame
         let window = UIWindow(frame: scene.coordinateSpace.bounds)
         // set the window's scene

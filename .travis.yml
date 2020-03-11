@@ -1,6 +1,10 @@
 language: objective-c
 osx_image: xcode8.3
+before_install:
+  - gem install bundler
 install:
   - bundle install
 script:
   - fastlane tests
+
+# Build #1 version
