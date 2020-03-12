@@ -13,18 +13,10 @@
 		EBCD9178241828B100FBC0C5 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9177241828B100FBC0C5 /* SavedViewController.swift */; };
 		EBCD917D241828B300FBC0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCD917C241828B300FBC0C5 /* Assets.xcassets */; };
 		EBCD918B241828B300FBC0C5 /* bookfetcher_mobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD918A241828B300FBC0C5 /* bookfetcher_mobileTests.swift */; };
-		EBCD9196241828B300FBC0C5 /* bookfetcher_mobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9195241828B300FBC0C5 /* bookfetcher_mobileUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		EBCD9187241828B300FBC0C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EBCD9166241828B100FBC0C5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EBCD916D241828B100FBC0C5;
-			remoteInfo = "bookfetcher-mobile";
-		};
-		EBCD9192241828B300FBC0C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EBCD9166241828B100FBC0C5 /* Project object */;
 			proxyType = 1;
@@ -44,9 +36,6 @@
 		EBCD9186241828B300FBC0C5 /* bookfetcher-mobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookfetcher-mobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCD918A241828B300FBC0C5 /* bookfetcher_mobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookfetcher_mobileTests.swift; sourceTree = "<group>"; };
 		EBCD918C241828B300FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBCD9191241828B300FBC0C5 /* bookfetcher-mobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bookfetcher-mobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBCD9195241828B300FBC0C5 /* bookfetcher_mobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookfetcher_mobileUITests.swift; sourceTree = "<group>"; };
-		EBCD9197241828B300FBC0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EBCD918E241828B300FBC0C5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,7 +61,6 @@
 			children = (
 				EBCD9170241828B100FBC0C5 /* bookfetcher-mobile */,
 				EBCD9189241828B300FBC0C5 /* bookfetcher-mobileTests */,
-				EBCD9194241828B300FBC0C5 /* bookfetcher-mobileUITests */,
 				EBCD916F241828B100FBC0C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,7 +70,6 @@
 			children = (
 				EBCD916E241828B100FBC0C5 /* bookfetcher-mobile.app */,
 				EBCD9186241828B300FBC0C5 /* bookfetcher-mobileTests.xctest */,
-				EBCD9191241828B300FBC0C5 /* bookfetcher-mobileUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,15 +94,6 @@
 				EBCD918C241828B300FBC0C5 /* Info.plist */,
 			);
 			path = "bookfetcher-mobileTests";
-			sourceTree = "<group>";
-		};
-		EBCD9194241828B300FBC0C5 /* bookfetcher-mobileUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EBCD9195241828B300FBC0C5 /* bookfetcher_mobileUITests.swift */,
-				EBCD9197241828B300FBC0C5 /* Info.plist */,
-			);
-			path = "bookfetcher-mobileUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,24 +134,6 @@
 			productReference = EBCD9186241828B300FBC0C5 /* bookfetcher-mobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EBCD9190241828B300FBC0C5 /* bookfetcher-mobileUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EBCD91A0241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobileUITests" */;
-			buildPhases = (
-				EBCD918D241828B300FBC0C5 /* Sources */,
-				EBCD918E241828B300FBC0C5 /* Frameworks */,
-				EBCD918F241828B300FBC0C5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EBCD9193241828B300FBC0C5 /* PBXTargetDependency */,
-			);
-			name = "bookfetcher-mobileUITests";
-			productName = "bookfetcher-mobileUITests";
-			productReference = EBCD9191241828B300FBC0C5 /* bookfetcher-mobileUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,10 +148,6 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					EBCD9185241828B300FBC0C5 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = EBCD916D241828B100FBC0C5;
-					};
-					EBCD9190241828B300FBC0C5 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = EBCD916D241828B100FBC0C5;
 					};
@@ -219,7 +168,6 @@
 			targets = (
 				EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */,
 				EBCD9185241828B300FBC0C5 /* bookfetcher-mobileTests */,
-				EBCD9190241828B300FBC0C5 /* bookfetcher-mobileUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,13 +182,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EBCD9184241828B300FBC0C5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EBCD918F241828B300FBC0C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,14 +210,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EBCD918D241828B300FBC0C5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBCD9196241828B300FBC0C5 /* bookfetcher_mobileUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -284,11 +217,6 @@
 			isa = PBXTargetDependency;
 			target = EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */;
 			targetProxy = EBCD9187241828B300FBC0C5 /* PBXContainerItemProxy */;
-		};
-		EBCD9193241828B300FBC0C5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EBCD916D241828B100FBC0C5 /* bookfetcher-mobile */;
-			targetProxy = EBCD9192241828B300FBC0C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,6 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9XW48SB2K;
 				INFOPLIST_FILE = "bookfetcher-mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9XW48SB2K;
 				INFOPLIST_FILE = "bookfetcher-mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,44 +419,6 @@
 			};
 			name = Release;
 		};
-		EBCD91A1241828B300FBC0C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "bookfetcher-mobileUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobileUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "bookfetcher-mobile";
-			};
-			name = Debug;
-		};
-		EBCD91A2241828B300FBC0C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "bookfetcher-mobileUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MonicaDebbeler.bookfetcher-mobileUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "bookfetcher-mobile";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,15 +445,6 @@
 			buildConfigurations = (
 				EBCD919E241828B300FBC0C5 /* Debug */,
 				EBCD919F241828B300FBC0C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EBCD91A0241828B300FBC0C5 /* Build configuration list for PBXNativeTarget "bookfetcher-mobileUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EBCD91A1241828B300FBC0C5 /* Debug */,
-				EBCD91A2241828B300FBC0C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
