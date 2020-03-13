@@ -14,6 +14,7 @@ class SavedViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         tabBarItem.image = UIImage(named: "saved")
         tabBarItem.title = "Saved"
+        navigationItem.title = "BookFetcher"
     }
     
     required init?(coder: NSCoder) {

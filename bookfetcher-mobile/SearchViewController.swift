@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         tabBarItem.image = UIImage(named: "search")
         tabBarItem.title = "Search"
+        navigationItem.title = "BookFetcher"
     }
     
     required init?(coder: NSCoder) {
