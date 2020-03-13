@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SearchViewController.swift
 //  bookfetcher-mobile
 //
 //  Created by Monica Debbeler on 3/10/20.
@@ -11,10 +11,17 @@ import UIKit
 class SearchViewController: UIViewController {
     
     let noResultsView = NoResultsView()
+    let searchController = UISearchController(searchResultsController: nil)
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        tabBarItem.image = UIImage(named: "search")
+        tabBarItem.image = UIImage(systemName: "magnifyingglass")
         tabBarItem.title = "Search"
         navigationItem.title = "BookFetcher"
     }
@@ -25,6 +32,12 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Books"
+        navigationItem.searchController = searchController
+
+        definesPresentationContext = true
         view.backgroundColor = .systemTeal
         view.addSubview(noResultsView)
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,19 +50,26 @@ class SearchViewController: UIViewController {
         noResultsView.isHidden = true
     }
     
-    
-    
     func returnTrue() -> Bool {
         return true
     }
     
 }
 
+extension SearchViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    if !isSearchBarEmpty {
+        noResultsView.isHidden = false
+    } else {
+        noResultsView.isHidden = true
+    }
+  }
+}
+
 class NoResultsView: UIView {
     
     let label = UILabel()
 
-    
     init() {
         super.init(frame: .zero)
         configure()
@@ -60,8 +80,10 @@ class NoResultsView: UIView {
     }
     
     private func configure() {
-        label.text = "No results. :("
+        label.text = "No results."
         label.textColor = .black
+        label.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 32)
         self.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  SavedViewController.swift
 //  bookfetcher-mobile
 //
 //  Created by Monica Debbeler on 3/10/20.
@@ -12,7 +12,7 @@ class SavedViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        tabBarItem.image = UIImage(named: "saved")
+        tabBarItem.image = UIImage(systemName: "bookmark.fill")
         tabBarItem.title = "Saved"
         navigationItem.title = "BookFetcher"
     }
