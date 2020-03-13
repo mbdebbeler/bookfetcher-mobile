@@ -9,15 +9,26 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        tabBarItem.image = UIImage(named: "search")
+        tabBarItem.title = "Search"
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
     }
-
+    
     func returnTrue() -> Bool {
         return true
     }
-
+    
 }
 
