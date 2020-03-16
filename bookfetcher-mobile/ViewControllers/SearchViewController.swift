@@ -6,21 +6,25 @@
 //  Copyright © 2020 Monica Debbeler. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class SearchViewController: UIViewController {
     
     let noResultsView = NoResultsView()
-    let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: SearchResultsViewController(bookStore: BookStore()))
+    
     var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true
     }
+    
     var isFiltering: Bool {
       return searchController.isActive && !isSearchBarEmpty
     }
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        
         tabBarItem.image = UIImage(systemName: "magnifyingglass")
         tabBarItem.title = "Search"
         navigationItem.title = "BookFetcher"
@@ -38,7 +42,7 @@ class SearchViewController: UIViewController {
         navigationItem.searchController = searchController
 
         definesPresentationContext = true
-        view.backgroundColor = .systemTeal
+        view.backgroundColor = .systemGray
         view.addSubview(noResultsView)
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -66,31 +70,3 @@ extension SearchViewController: UISearchResultsUpdating {
   }
 }
 
-class NoResultsView: UIView {
-    
-    let label = UILabel()
-
-    init() {
-        super.init(frame: .zero)
-        configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        label.text = "No results."
-        label.textColor = .black
-        label.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
-        label.font = UIFont.boldSystemFont(ofSize: 32)
-        self.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
-    }
-    
-    
-}
