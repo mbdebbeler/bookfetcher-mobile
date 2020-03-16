@@ -12,19 +12,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // make sure the scene is of the correct type, else return
         guard let scene = scene as? UIWindowScene else { return }
-        // create your new view controller
-        // embedded in a nav controller
-        let initialViewController = UINavigationController(rootViewController: SearchViewController())
         // make a new window with the correct frame
         let window = UIWindow(frame: scene.coordinateSpace.bounds)
         // set the window's scene
         window.windowScene = scene
         // set the window's rootVC
-        window.rootViewController = initialViewController
+        window.rootViewController = buildInitialViewController()
         // let the system know this window should show and recieve keyboard input
         window.makeKeyAndVisible()
         // hold a reference to the window in the scene delegate
@@ -59,6 +55,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
+    private func buildInitialViewController() -> UIViewController {
+        let tabBarController = UITabBarController()
+        let searchViewController = SearchViewController()
+        let savedViewController = SavedViewController()
+        let searchNavViewController = UINavigationController(rootViewController: searchViewController)
+        let savedNavViewController = UINavigationController(rootViewController: savedViewController)
+        tabBarController.viewControllers = [searchNavViewController, savedNavViewController]
+        return tabBarController
+    }
     
 }
 
