@@ -9,18 +9,47 @@
 import Foundation
 
 class BookStore {
-    private let books = Array((0..<100)).map { (i: Int) -> Book in
-        return Book(title: "World Book vol. \(i)")
+
+    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
+        let localBooksClient = LocalBooksClient()
+        localBooksClient.search(query: "stub", completion: completion)
+    }
+
+}
+
+protocol BooksClient {
+    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void)
+}
+
+class GoogleBooksClient: BooksClient {
+    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {}
+}
+
+class LocalBooksClient: BooksClient {
+    
+    enum LocalBooksClientError: Error {
+        case noLocalData
     }
     
-    func getBooks() -> [Book] {
-        return books
-    }
-     
-    //local version, no networking needed. checks a query against a list of book titles
-    func search(query: String) -> [Book] {
-        return books.filter {(book: Book) -> Bool in
-            book.title == query
+    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
+        do {
+            let data = try getLocalJSONResponse()
+            let decoder = JSONDecoder()
+            let bookResponse = try decoder.decode(BookResponse.self, from: data)
+            completion(Result.success(bookResponse.items))
+        } catch let error {
+            let result = Result<[Book], Error>.failure(error)
+            completion(result)
         }
     }
+    
+    func getLocalJSONResponse() throws -> Data {
+        guard let url: URL = Bundle.main.url(forResource: "sampleData", withExtension: "json") else {
+            throw LocalBooksClientError.noLocalData
+        }
+        return try Data(contentsOf: url)
+        
+    }
+    
 }
+

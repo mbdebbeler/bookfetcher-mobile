@@ -11,10 +11,9 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
     let tableView = UITableView()
-    let books: [Book]
+    var books: [Book] = []
     
     init(bookStore: BookStore) {
-        books = bookStore.getBooks()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,7 +23,7 @@ class SearchResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = .systemGray
+        tableView.backgroundColor = .white
         tableView.register(BookCell.self, forCellReuseIdentifier: String(describing: BookCell.self))
         tableView.dataSource = self
         tableView.delegate = self
@@ -46,7 +45,6 @@ class BookCell: UITableViewCell {
     
     let iconView = UILabel()
     let label = UILabel()
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -96,7 +94,6 @@ extension SearchResultsViewController: UITableViewDataSource {
         }
         let cellNumber = books[indexPath.row].title
         cell.label.text = cellNumber
-        
         return cell
     }
     
@@ -105,7 +102,7 @@ extension SearchResultsViewController: UITableViewDataSource {
 extension SearchResultsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(books[indexPath.row])
+        print(books[indexPath.row].title)
     }
     
 }

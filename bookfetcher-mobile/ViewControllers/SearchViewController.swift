@@ -11,20 +11,24 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    let bookStore: BookStore
+    let searchResultsViewController: SearchResultsViewController
     let noResultsView = NoResultsView()
-    let searchController = UISearchController(searchResultsController: SearchResultsViewController(bookStore: BookStore()))
+    let searchController: UISearchController
     
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+        return searchController.isActive && !isSearchBarEmpty
     }
     
-    init() {
+    init(bookStore: BookStore) {
+        self.bookStore = bookStore
+        self.searchResultsViewController = SearchResultsViewController(bookStore: bookStore)
+        self.searchController = UISearchController(searchResultsController: searchResultsViewController)
         super.init(nibName: nil, bundle: nil)
-        
         tabBarItem.image = UIImage(systemName: "magnifyingglass")
         tabBarItem.title = "Search"
         navigationItem.title = "BookFetcher"
@@ -39,10 +43,12 @@ class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Books"
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
-
+        
+        
         definesPresentationContext = true
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .white
         view.addSubview(noResultsView)
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -60,13 +66,28 @@ class SearchViewController: UIViewController {
     
 }
 
-extension SearchViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    if !isSearchBarEmpty {
-        noResultsView.isHidden = false
-    } else {
-        noResultsView.isHidden = true
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text else { return }
+        bookStore.search(query: query) { [weak self] (result: Result<[Book], Error>) in
+            switch result {
+            case let .success(books):
+                self?.searchResultsViewController.books = books
+            case let .failure(error):
+                print(error)
+            }
+        }
+        searchResultsViewController.tableView .reloadData()
     }
-  }
+}
+
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if !isSearchBarEmpty {
+            noResultsView.isHidden = false
+        } else {
+            noResultsView.isHidden = true
+        }
+    }
 }
 

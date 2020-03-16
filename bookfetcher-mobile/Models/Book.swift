@@ -8,6 +8,17 @@
 
 import Foundation
 
-struct Book {
-    let title: String
+struct Book: Decodable {
+    struct VolumeInfo: Decodable {
+        let title: String
+    }
+    let volumeInfo: VolumeInfo
+    var title: String {
+        return volumeInfo.title
+    }
 }
+
+struct BookResponse: Decodable {
+    let items: [Book]
+}
+
