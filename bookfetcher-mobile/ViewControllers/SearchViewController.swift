@@ -6,20 +6,28 @@
 //  Copyright © 2020 Monica Debbeler. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class SearchViewController: UIViewController {
     
+    let bookStore: BookStore
+    let searchResultsViewController: SearchResultsViewController
     let noResultsView = NoResultsView()
-    let searchController = UISearchController(searchResultsController: nil)
+    let searchController: UISearchController
+    
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
-    }
-    var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    init() {
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
+    init(bookStore: BookStore) {
+        self.bookStore = bookStore
+        self.searchResultsViewController = SearchResultsViewController(bookStore: bookStore)
+        self.searchController = UISearchController(searchResultsController: searchResultsViewController)
         super.init(nibName: nil, bundle: nil)
         tabBarItem.image = UIImage(systemName: "magnifyingglass")
         tabBarItem.title = "Search"
@@ -35,10 +43,12 @@ class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Books"
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
-
+        
+        
         definesPresentationContext = true
-        view.backgroundColor = .systemTeal
+        view.backgroundColor = .white
         view.addSubview(noResultsView)
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -56,41 +66,28 @@ class SearchViewController: UIViewController {
     
 }
 
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text else { return }
+        bookStore.search(query: query) { [weak self] (result: Result<[Book], Error>) in
+            switch result {
+            case let .success(books):
+                self?.searchResultsViewController.books = books
+            case let .failure(error):
+                print(error)
+            }
+        }
+        searchResultsViewController.tableView .reloadData()
+    }
+}
+
 extension SearchViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    if !isSearchBarEmpty {
-        noResultsView.isHidden = false
-    } else {
-        noResultsView.isHidden = true
+    func updateSearchResults(for searchController: UISearchController) {
+        if !isSearchBarEmpty {
+            noResultsView.isHidden = false
+        } else {
+            noResultsView.isHidden = true
+        }
     }
-  }
 }
 
-class NoResultsView: UIView {
-    
-    let label = UILabel()
-
-    init() {
-        super.init(frame: .zero)
-        configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        label.text = "No results."
-        label.textColor = .black
-        label.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
-        label.font = UIFont.boldSystemFont(ofSize: 32)
-        self.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
-    }
-    
-    
-}

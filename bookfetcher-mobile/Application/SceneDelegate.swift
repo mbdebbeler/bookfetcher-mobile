@@ -57,7 +57,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func buildInitialViewController() -> UIViewController {
         let tabBarController = UITabBarController()
-        let searchViewController = SearchViewController()
+        let searchViewController = SearchViewController(bookStore: BookStore())
         let savedViewController = SavedViewController()
         let searchNavViewController = UINavigationController(rootViewController: searchViewController)
         let savedNavViewController = UINavigationController(rootViewController: savedViewController)

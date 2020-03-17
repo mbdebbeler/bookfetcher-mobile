@@ -15,7 +15,7 @@ class bookfetcher_mobileTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        systemUnderTest = SearchViewController()
+        systemUnderTest = SearchViewController(bookStore: BookStore())
     }
 
     override func tearDown() {
