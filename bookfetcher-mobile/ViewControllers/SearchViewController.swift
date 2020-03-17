@@ -46,17 +46,13 @@ class SearchViewController: UIViewController {
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         
-        
         definesPresentationContext = true
         view.backgroundColor = .white
         view.addSubview(noResultsView)
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            noResultsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            noResultsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            noResultsView.topAnchor.constraint(equalTo: view.topAnchor),
-            noResultsView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        NSLayoutConstraint.activate(
+            noResultsView.pin(to: view)
+        )
         noResultsView.isHidden = true
     }
     
@@ -69,12 +65,14 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
+        self.searchResultsViewController.loadingView.isHidden = false
         bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
             switch result {
             case let .success(books):
                 DispatchQueue.main.async {
                     self?.searchResultsViewController.books = books
                     self?.searchResultsViewController.tableView .reloadData()
+                    self?.searchResultsViewController.loadingView.isHidden = true
                 }
             case let .failure(error):
                 print(error)

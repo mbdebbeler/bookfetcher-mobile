@@ -25,7 +25,6 @@ class NoResultsView: UIView {
     private func configure() {
         label.text = "No results."
         label.textColor = .black
-        label.frame = CGRect(x: 20, y: 8, width: 320, height: 20)
         label.font = UIFont.boldSystemFont(ofSize: 32)
         self.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false

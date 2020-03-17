@@ -11,6 +11,7 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
     let tableView = UITableView()
+    let loadingView = LoadingView()
     var books: [Book] = []
     
     init(bookStore: BookStore) {
@@ -28,15 +29,13 @@ class SearchResultsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
+        view.addSubview(loadingView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            [
-                tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                tableView.topAnchor.constraint(equalTo: view.topAnchor),
-                tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ]
-        )
+                tableView.pin(to: view) + loadingView.pin(to: view)
+            )
+        loadingView.isHidden = true
     }
     
 }
