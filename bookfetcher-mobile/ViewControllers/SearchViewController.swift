@@ -72,14 +72,14 @@ extension SearchViewController: UISearchBarDelegate {
         bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
             switch result {
             case let .success(books):
-                 DispatchQueue.main.async {
-                self?.searchResultsViewController.books = books
+                DispatchQueue.main.async {
+                    self?.searchResultsViewController.books = books
+                    self?.searchResultsViewController.tableView .reloadData()
                 }
             case let .failure(error):
                 print(error)
             }
         }
-        searchResultsViewController.tableView .reloadData()
     }
 }
 

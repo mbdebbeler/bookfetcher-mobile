@@ -31,11 +31,12 @@ class GoogleBooksClient: BooksClient {
     enum GoogleBooksClientError: Error {
         case unableToConnect
     }
+
+    var dataTask: URLSessionDataTask?
+    let defaultSession = URLSession(configuration: .default)
     
     func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
         
-        let defaultSession = URLSession(configuration: .default)
-        var dataTask: URLSessionDataTask?
         dataTask?.cancel()
         
         let googleBooksEndpoint = "https://www.googleapis.com/books/v1/volumes"
@@ -47,7 +48,7 @@ class GoogleBooksClient: BooksClient {
             guard let url = urlComponents.url else {
                 return
             }
-            defaultSession.dataTask(with: url) { (data, response, error) in
+            dataTask = defaultSession.dataTask(with: url) { (data, response, error) in
                 if let error = error {
                     print("Oh no!", error)
                     completion(Result<[Book], Error>.failure(error))
@@ -63,7 +64,8 @@ class GoogleBooksClient: BooksClient {
                     print("oh no! Failed to decode data into books", error)
                     completion(Result<[Book], Error>.failure(error))
                 }
-            }.resume()
+            }
+            dataTask?.resume()
         }
     }
 }
