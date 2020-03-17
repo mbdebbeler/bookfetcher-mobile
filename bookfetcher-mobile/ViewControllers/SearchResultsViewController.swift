@@ -12,6 +12,7 @@ import UIKit
 class SearchResultsViewController: UIViewController {
     let tableView = UITableView()
     let loadingView = LoadingView()
+    let noResultsView = NoResultsView()
     var books: [Book] = []
     
     init(bookStore: BookStore) {
@@ -28,54 +29,39 @@ class SearchResultsViewController: UIViewController {
         tableView.register(BookCell.self, forCellReuseIdentifier: String(describing: BookCell.self))
         tableView.dataSource = self
         tableView.delegate = self
+        view.addSubview(noResultsView)
         view.addSubview(tableView)
         view.addSubview(loadingView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.translatesAutoresizingMaskIntoConstraints = false
+        noResultsView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-                tableView.pin(to: view) + loadingView.pin(to: view)
+            tableView.pin(to: view) + loadingView.pin(to: view) + noResultsView.pin(to: view)
             )
         loadingView.isHidden = true
+        noResultsView.isHidden = true
     }
     
-}
-
-class BookCell: UITableViewCell {
-    
-    let iconView = UILabel()
-    let label = UILabel()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configure()
+    func prepareForSearch() {
+        loadingView.isHidden = false
+        noResultsView.isHidden = true
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func handle(result: Result<[Book], Error>) {
+        switch result {
+        case let .success(books):
+            DispatchQueue.main.async { [weak self] in
+                self?.books = books
+                self?.tableView .reloadData()
+                self?.loadingView.isHidden = true
+                if books.isEmpty {
+                    self?.noResultsView.isHidden = false
+                }
+            }
+        case let .failure(error):
+            print(error)
+        }
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.label.text = nil
-    }
-    
-    private func configure() {
-        iconView.text = "📚"
-        self.addSubview(iconView)
-        self.addSubview(label)
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        iconView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            iconView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            iconView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 16),
-            label.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-            
-        ])
-    }
-    
 }
 
 extension SearchResultsViewController: UITableViewDataSource {

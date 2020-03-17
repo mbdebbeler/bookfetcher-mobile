@@ -14,6 +14,7 @@
 		EB75BF4024200EFC0031533C /* sampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = EB75BF3F24200EFC0031533C /* sampleData.json */; };
 		EB75BF42242132F00031533C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB75BF41242132F00031533C /* LoadingView.swift */; };
 		EB75BF44242134D10031533C /* UIView+BookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB75BF43242134D10031533C /* UIView+BookFetcher.swift */; };
+		EB75BF4624216C990031533C /* BookCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB75BF4524216C990031533C /* BookCellView.swift */; };
 		EBCD9172241828B100FBC0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9171241828B100FBC0C5 /* AppDelegate.swift */; };
 		EBCD9174241828B100FBC0C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9173241828B100FBC0C5 /* SceneDelegate.swift */; };
 		EBCD9176241828B100FBC0C5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD9175241828B100FBC0C5 /* SearchViewController.swift */; };
@@ -40,6 +41,7 @@
 		EB75BF3F24200EFC0031533C /* sampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		EB75BF41242132F00031533C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EB75BF43242134D10031533C /* UIView+BookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BookFetcher.swift"; sourceTree = "<group>"; };
+		EB75BF4524216C990031533C /* BookCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellView.swift; sourceTree = "<group>"; };
 		EBCD916E241828B100FBC0C5 /* bookfetcher-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bookfetcher-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCD9171241828B100FBC0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBCD9173241828B100FBC0C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				EB75BF39241FF0E20031533C /* NoResultsView.swift */,
 				EB75BF41242132F00031533C /* LoadingView.swift */,
 				EB75BF43242134D10031533C /* UIView+BookFetcher.swift */,
+				EB75BF4524216C990031533C /* BookCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				EB75BF3E241FF1590031533C /* BookStore.swift in Sources */,
 				EB75BF3C241FF14D0031533C /* Book.swift in Sources */,
 				EBCD9176241828B100FBC0C5 /* SearchViewController.swift in Sources */,
+				EB75BF4624216C990031533C /* BookCellView.swift in Sources */,
 				EBCD9172241828B100FBC0C5 /* AppDelegate.swift in Sources */,
 				EB75BF34241FECBD0031533C /* SearchResultsViewController.swift in Sources */,
 				EBCD9174241828B100FBC0C5 /* SceneDelegate.swift in Sources */,

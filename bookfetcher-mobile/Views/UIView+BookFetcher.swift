@@ -18,4 +18,11 @@ extension UIView {
             topAnchor.constraint(equalTo: other.topAnchor),
             bottomAnchor.constraint(equalTo: other.bottomAnchor)]
     }
+    
+    func center() -> [NSLayoutConstraint] {
+        return [
+            centerXAnchor.constraint(equalTo: centerXAnchor),
+            centerYAnchor.constraint(equalTo: centerYAnchor)
+        ]
+    }
 }
