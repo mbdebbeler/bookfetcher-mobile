@@ -69,10 +69,12 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
-        bookStore.search(query: query) { [weak self] (result: Result<[Book], Error>) in
+        bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
             switch result {
             case let .success(books):
+                 DispatchQueue.main.async {
                 self?.searchResultsViewController.books = books
+                }
             case let .failure(error):
                 print(error)
             }
