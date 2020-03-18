@@ -25,10 +25,11 @@ class BookCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.label.text = nil
+        label.text = nil
     }
     
     private func configure() {
+        label.lineBreakMode = .byTruncatingTail
         iconView.text = "📚"
         self.addSubview(iconView)
         self.addSubview(label)

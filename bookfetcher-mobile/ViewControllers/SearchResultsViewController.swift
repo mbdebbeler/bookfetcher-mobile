@@ -13,6 +13,7 @@ class SearchResultsViewController: UIViewController {
     let tableView = UITableView()
     let loadingView = LoadingView()
     let noResultsView = NoResultsView()
+    let errorView = ErrorView()
     var books: [Book] = []
     
     init(bookStore: BookStore) {
@@ -29,36 +30,48 @@ class SearchResultsViewController: UIViewController {
         tableView.register(BookCell.self, forCellReuseIdentifier: String(describing: BookCell.self))
         tableView.dataSource = self
         tableView.delegate = self
-        view.addSubview(noResultsView)
         view.addSubview(tableView)
+        view.addSubview(noResultsView)
         view.addSubview(loadingView)
+        view.addSubview(errorView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            tableView.pin(to: view) + loadingView.pin(to: view) + noResultsView.pin(to: view)
-            )
+            tableView.pin(to: view) +
+                loadingView.pin(to: view) +
+                noResultsView.pin(to: view) +
+                errorView.pin(to: view)
+        )
         loadingView.isHidden = true
         noResultsView.isHidden = true
+        errorView.isHidden = true
     }
     
     func prepareForSearch() {
         loadingView.isHidden = false
         noResultsView.isHidden = true
+        errorView.isHidden = true
     }
     
     func handle(result: Result<[Book], Error>) {
         switch result {
         case let .success(books):
-            DispatchQueue.main.async { [weak self] in
-                self?.books = books
-                self?.tableView .reloadData()
-                self?.loadingView.isHidden = true
-                if books.isEmpty {
-                    self?.noResultsView.isHidden = false
-                }
+            self.books = books
+            tableView .reloadData()
+            loadingView.isHidden = true
+            if books.isEmpty {
+                noResultsView.isHidden = false
             }
         case let .failure(error):
+            let code = (error as NSError)._code
+            if code == -1009 {
+                errorView.label.text = error.localizedDescription
+                errorView.isHidden = false
+            } else {
+                noResultsView.isHidden = false
+            }
             print(error)
         }
     }

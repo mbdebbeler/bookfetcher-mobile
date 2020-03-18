@@ -59,11 +59,14 @@ extension SearchViewController: UISearchBarDelegate {
         guard let query = searchBar.text else { return }
         self.searchResultsViewController.prepareForSearch()
         bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
-            self?.searchResultsViewController.handle(result: result)
+            DispatchQueue.main.async { [weak self] in
+                self?.searchResultsViewController.handle(result: result)
+            }
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchResultsViewController.prepareForSearch()
         self.searchResultsViewController.books = []
         self.searchResultsViewController.tableView .reloadData()
     }

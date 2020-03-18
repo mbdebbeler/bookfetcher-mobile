@@ -1,15 +1,15 @@
 //
-//  NoResultsView.swift
+//  ErrorView.swift
 //  bookfetcher-mobile
 //
-//  Created by Monica Debbeler on 3/16/20.
+//  Created by Monica Debbeler on 3/18/20.
 //  Copyright © 2020 Monica Debbeler. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class NoResultsView: UIView {
+class ErrorView: UIView {
     
     let label = UILabel()
 
@@ -24,9 +24,9 @@ class NoResultsView: UIView {
     
     private func configure() {
         self.backgroundColor = .white
-        label.text = "No results."
+        label.text = "We can't connect to Google Books right now."
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         self.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -37,4 +37,3 @@ class NoResultsView: UIView {
     
     
 }
-

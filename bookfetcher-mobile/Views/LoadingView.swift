@@ -23,7 +23,7 @@ class LoadingView: UIView {
     }
     
     private func configure() {
-        spinner.backgroundColor = .white
+        self.backgroundColor = .white
         spinner.startAnimating()   
         self.addSubview(spinner)
         spinner.translatesAutoresizingMaskIntoConstraints = false

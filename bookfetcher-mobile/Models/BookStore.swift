@@ -58,7 +58,7 @@ class GoogleBooksClient: BooksClient {
                     guard let data = data else { return }
                     let decoder = JSONDecoder()
                     let bookResponse = try decoder.decode(BookResponse.self, from: data)
-                    completion(Result.success(bookResponse.items))
+                    completion(Result.success(bookResponse.items ?? []))
                 }
                 catch let error {
                     print("oh no! Failed to decode data into books", error)
@@ -81,7 +81,7 @@ class LocalBooksClient: BooksClient {
             let data = try getLocalJSONResponse()
             let decoder = JSONDecoder()
             let bookResponse = try decoder.decode(BookResponse.self, from: data)
-            completion(Result.success(bookResponse.items))
+            completion(Result.success(bookResponse.items ?? []))
         } catch let error {
             let result = Result<[Book], Error>.failure(error)
             completion(result)
