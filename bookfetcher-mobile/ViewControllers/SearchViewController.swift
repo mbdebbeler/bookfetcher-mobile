@@ -11,9 +11,12 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    var isSearching = false
+    var fetchedAllResults = false
     let bookStore: BookStore
     let searchResultsViewController: SearchResultsViewController
     let searchController: UISearchController
+    var lastQuery: String?
     
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -39,6 +42,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchResultsViewController.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Books"
         searchController.searchBar.delegate = self
@@ -57,18 +61,40 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
+        lastQuery = query
+        fetchedAllResults = false
         self.searchResultsViewController.prepareForSearch()
-        bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
+        self.search(query: query)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.lastQuery = nil
+        self.fetchedAllResults = false
+        self.searchResultsViewController.prepareForSearch()
+        self.searchResultsViewController.books = []
+        self.searchResultsViewController.tableView .reloadData()
+    }
+    
+    func search(query: String, offset: Int = 0) {
+        if isSearching || fetchedAllResults { return }
+        isSearching = true
+        bookStore.searchGoogleBooks(query: query, offset: offset) { [weak self] (result: Result<[Book], Error>) in
+            self?.isSearching = false
+            if let books = try? result.get(), books.isEmpty {
+                self?.fetchedAllResults = true
+            }
             DispatchQueue.main.async { [weak self] in
                 self?.searchResultsViewController.handle(result: result)
             }
         }
     }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchResultsViewController.prepareForSearch()
-        self.searchResultsViewController.books = []
-        self.searchResultsViewController.tableView .reloadData()
+}
+
+extension SearchViewController: SearchResultsViewControllerDelegate {
+    func didScrollToBottom() {
+        guard let query = lastQuery else { return }
+        let offset = searchResultsViewController.books.count
+        search(query: query, offset: offset)
     }
 }
 

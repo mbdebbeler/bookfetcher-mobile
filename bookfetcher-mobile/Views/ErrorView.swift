@@ -24,7 +24,6 @@ class ErrorView: UIView {
     
     private func configure() {
         self.backgroundColor = .white
-        label.text = "We can't connect to Google Books right now."
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         self.addSubview(label)

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class SearchResultsViewController: UIViewController {
+    weak var delegate: SearchResultsViewControllerDelegate?
     let tableView = UITableView()
     let loadingView = LoadingView()
     let noResultsView = NoResultsView()
@@ -50,6 +51,7 @@ class SearchResultsViewController: UIViewController {
     }
     
     func prepareForSearch() {
+        books = []
         loadingView.isHidden = false
         noResultsView.isHidden = true
         errorView.isHidden = true
@@ -58,10 +60,10 @@ class SearchResultsViewController: UIViewController {
     func handle(result: Result<[Book], Error>) {
         switch result {
         case let .success(books):
-            self.books = books
+            self.books += books
             tableView .reloadData()
             loadingView.isHidden = true
-            if books.isEmpty {
+            if self.books.isEmpty {
                 noResultsView.isHidden = false
             }
         case let .failure(error):
@@ -90,9 +92,19 @@ extension SearchResultsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BookCell.self), for: indexPath) as? BookCell else {
             fatalError("Cell not registered properly")
         }
-        let cellNumber = books[indexPath.row].title
-        cell.label.text = cellNumber
+        let book = books[indexPath.row]
+        cell.titleLabel.text = book.title
+        cell.authorLabel.text = book.authors
+        if let thumbnailImageURL = book.thumbnailImageURL {
+            cell.thumbnailImageView.load(url: thumbnailImageURL)
+        } else {
+            cell.thumbnailImageView.image = UIImage(named: "sad")
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }
@@ -103,4 +115,17 @@ extension SearchResultsViewController: UITableViewDelegate {
         print(books[indexPath.row].title)
     }
     
+     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        if distanceFromBottom < height {
+            delegate?.didScrollToBottom()
+        }
+    }
+    
+}
+
+protocol SearchResultsViewControllerDelegate: class {
+    func didScrollToBottom()
 }

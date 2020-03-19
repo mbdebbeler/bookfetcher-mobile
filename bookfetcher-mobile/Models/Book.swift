@@ -11,14 +11,22 @@ import Foundation
 struct Book: Decodable {
     struct VolumeInfo: Decodable {
         let title: String
+        let authors: [String]?
+        let imageLinks: [String: URL]?
+        let publisher: String?
     }
     let volumeInfo: VolumeInfo
     var title: String {
         return volumeInfo.title
+    }
+    var authors: String {
+        return volumeInfo.authors?.joined(separator: ", ") ?? volumeInfo.publisher ?? ""
+    }
+    var thumbnailImageURL: URL? {
+        return volumeInfo.imageLinks?["thumbnail"]
     }
 }
 
 struct BookResponse: Decodable {
     let items: [Book]?
 }
-
