@@ -23,6 +23,7 @@ class NoResultsView: UIView {
     }
     
     private func configure() {
+        self.backgroundColor = .white
         label.text = "No results."
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 32)
