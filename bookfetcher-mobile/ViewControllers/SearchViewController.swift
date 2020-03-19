@@ -11,9 +11,11 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    var isSearching = false
     let bookStore: BookStore
     let searchResultsViewController: SearchResultsViewController
     let searchController: UISearchController
+    var lastQuery: String?
     
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -39,6 +41,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchResultsViewController.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Books"
         searchController.searchBar.delegate = self
@@ -57,18 +60,35 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
+        lastQuery = query
         self.searchResultsViewController.prepareForSearch()
+        self.search(query: query)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.lastQuery = nil
+        self.searchResultsViewController.prepareForSearch()
+        self.searchResultsViewController.books = []
+        self.searchResultsViewController.tableView .reloadData()
+    }
+    
+    func search(query: String, offset: Int = 0) {
+        if isSearching { return }
+        isSearching = true
         bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
+            self?.isSearching = false
             DispatchQueue.main.async { [weak self] in
                 self?.searchResultsViewController.handle(result: result)
             }
         }
     }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchResultsViewController.prepareForSearch()
-        self.searchResultsViewController.books = []
-        self.searchResultsViewController.tableView .reloadData()
+}
+
+extension SearchViewController: SearchResultsViewControllerDelegate {
+    func didScrollToBottom() {
+        guard let query = lastQuery else { return }
+        let offset = searchResultsViewController.books.count
+        search(query: query, offset: offset)
     }
 }
 

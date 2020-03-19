@@ -11,8 +11,10 @@ import UIKit
 
 class BookCell: UITableViewCell {
     
-    let iconView = UILabel()
-    let label = UILabel()
+    let containerView = UIView()
+    let thumbnailImageView = UIImageView()
+    let titleLabel = UILabel()
+    let authorLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,25 +27,48 @@ class BookCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        label.text = nil
+        titleLabel.text = nil
+        authorLabel.text = nil
+        thumbnailImageView.image = nil
     }
     
     private func configure() {
-        label.lineBreakMode = .byTruncatingTail
-        iconView.text = "📚"
-        self.addSubview(iconView)
-        self.addSubview(label)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        authorLabel.translatesAutoresizingMaskIntoConstraints = false
+        thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        label.translatesAutoresizingMaskIntoConstraints = false
-        iconView.translatesAutoresizingMaskIntoConstraints = false
+        thumbnailImageView.contentMode = .scaleAspectFit
+        titleLabel.lineBreakMode = .byTruncatingTail
+        authorLabel.lineBreakMode = .byTruncatingTail
+        titleLabel.font = .boldSystemFont(ofSize: 18)
+        let padding: CGFloat = 16
+        
+        containerView.addSubview(thumbnailImageView)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(authorLabel)
+        contentView.addSubview(containerView)
         
         NSLayoutConstraint.activate([
-            iconView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            iconView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 16),
-            label.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
             
+            thumbnailImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            thumbnailImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            thumbnailImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            thumbnailImageView.widthAnchor.constraint(equalTo: thumbnailImageView.heightAnchor, multiplier: 3/4),
+            
+            titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            
+            authorLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 16),
+            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            authorLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         ])
     }
+    
     
 }

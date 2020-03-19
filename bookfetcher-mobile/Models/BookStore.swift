@@ -10,20 +10,20 @@ import Foundation
 
 class BookStore {
     
-    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
+    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
         let localBooksClient = LocalBooksClient()
-        localBooksClient.search(query: "stub", completion: completion)
+        localBooksClient.search(query: "stub", offset: offset, completion: completion)
     }
     
-    func searchGoogleBooks(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
+    func searchGoogleBooks(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
         let googleBooksClient = GoogleBooksClient()
-        googleBooksClient.search(query: query, completion: completion)
+        googleBooksClient.search(query: query, offset: offset, completion: completion)
     }
     
 }
 
 protocol BooksClient {
-    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void)
+    func search(query: String, offset: Int, completion: @escaping (Result<[Book], Error>) -> Void)
 }
 
 class GoogleBooksClient: BooksClient {
@@ -35,14 +35,16 @@ class GoogleBooksClient: BooksClient {
     var dataTask: URLSessionDataTask?
     let defaultSession = URLSession(configuration: .default)
     
-    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
+    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
         
         dataTask?.cancel()
         
         let googleBooksEndpoint = "https://www.googleapis.com/books/v1/volumes"
         if var urlComponents = URLComponents(string: googleBooksEndpoint) {
             urlComponents.queryItems = [
-                URLQueryItem(name: "q", value: query)
+                URLQueryItem(name: "q", value: query),
+                URLQueryItem(name: "maxResults", value: "40"),
+                URLQueryItem(name: "startIndex", value: offset.description)
             ]
 
             guard let url = urlComponents.url else {
@@ -76,7 +78,7 @@ class LocalBooksClient: BooksClient {
         case noLocalData
     }
     
-    func search(query: String, completion: @escaping (Result<[Book], Error>) -> Void) {
+    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
         do {
             let data = try getLocalJSONResponse()
             let decoder = JSONDecoder()
