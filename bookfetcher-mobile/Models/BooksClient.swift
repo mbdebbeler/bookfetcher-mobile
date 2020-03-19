@@ -1,5 +1,5 @@
 //
-//  BookStore.swift
+//  BooksClient.swift
 //  bookfetcher-mobile
 //
 //  Created by Monica Debbeler on 3/16/20.
@@ -7,20 +7,6 @@
 //
 
 import Foundation
-
-class BookStore {
-    
-    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
-        let localBooksClient = LocalBooksClient()
-        localBooksClient.search(query: "stub", offset: offset, completion: completion)
-    }
-    
-    func searchGoogleBooks(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
-        let googleBooksClient = GoogleBooksClient()
-        googleBooksClient.search(query: query, offset: offset, completion: completion)
-    }
-    
-}
 
 protocol BooksClient {
     func search(query: String, offset: Int, completion: @escaping (Result<[Book], Error>) -> Void)
@@ -33,9 +19,14 @@ class GoogleBooksClient: BooksClient {
     }
 
     var dataTask: URLSessionDataTask?
-    let defaultSession = URLSession(configuration: .default)
+    let networkingSession: NetworkingSession
     
-    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
+    init(networkingSession: NetworkingSession = URLSession(configuration: .default)) {
+        self.networkingSession = networkingSession
+    }
+    
+    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) ->
+        Void) {
         dataTask?.cancel()
         
         let googleBooksEndpoint = "https://www.googleapis.com/books/v1/volumes"
@@ -49,7 +40,9 @@ class GoogleBooksClient: BooksClient {
             guard let url = urlComponents.url else {
                 return
             }
-            dataTask = defaultSession.dataTask(with: url) { (data, response, error) in
+            //you're going to make a fake session, like we did in Java
+            //mock URLSession
+            dataTask = networkingSession.dataTask(with: url) { (data, response, error) in
                 if let error = error {
                     print("Oh no!", error)
                     completion(Result<[Book], Error>.failure(error))
@@ -71,31 +64,10 @@ class GoogleBooksClient: BooksClient {
     }
 }
 
-class LocalBooksClient: BooksClient {
-    
-    enum LocalBooksClientError: Error {
-        case noLocalData
-    }
-    
-    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
-        do {
-            let data = try getLocalJSONResponse()
-            let decoder = JSONDecoder()
-            let bookResponse = try decoder.decode(BookResponse.self, from: data)
-            completion(Result.success(bookResponse.items ?? []))
-        } catch let error {
-            let result = Result<[Book], Error>.failure(error)
-            completion(result)
-        }
-    }
-    
-    func getLocalJSONResponse() throws -> Data {
-        guard let url: URL = Bundle.main.url(forResource: "sampleData", withExtension: "json") else {
-            throw LocalBooksClientError.noLocalData
-        }
-        return try Data(contentsOf: url)
-        
-    }
-    
+protocol NetworkingSession {
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
 }
 
+extension URLSession: NetworkingSession {
+    
+}
