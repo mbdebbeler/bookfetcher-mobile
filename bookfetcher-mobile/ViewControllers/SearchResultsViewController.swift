@@ -51,6 +51,7 @@ class SearchResultsViewController: UIViewController {
     }
     
     func prepareForSearch() {
+        books = []
         loadingView.isHidden = false
         noResultsView.isHidden = true
         errorView.isHidden = true
@@ -62,7 +63,7 @@ class SearchResultsViewController: UIViewController {
             self.books += books
             tableView .reloadData()
             loadingView.isHidden = true
-            if books.isEmpty {
+            if self.books.isEmpty {
                 noResultsView.isHidden = false
             }
         case let .failure(error):

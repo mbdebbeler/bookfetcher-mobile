@@ -29,5 +29,4 @@ struct Book: Decodable {
 
 struct BookResponse: Decodable {
     let items: [Book]?
-    let totalItems: Int
 }

@@ -36,7 +36,6 @@ class GoogleBooksClient: BooksClient {
     let defaultSession = URLSession(configuration: .default)
     
     func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
-        
         dataTask?.cancel()
         
         let googleBooksEndpoint = "https://www.googleapis.com/books/v1/volumes"

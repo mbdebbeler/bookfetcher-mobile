@@ -12,6 +12,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     var isSearching = false
+    var fetchedAllResults = false
     let bookStore: BookStore
     let searchResultsViewController: SearchResultsViewController
     let searchController: UISearchController
@@ -61,22 +62,27 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
         lastQuery = query
+        fetchedAllResults = false
         self.searchResultsViewController.prepareForSearch()
         self.search(query: query)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.lastQuery = nil
+        self.fetchedAllResults = false
         self.searchResultsViewController.prepareForSearch()
         self.searchResultsViewController.books = []
         self.searchResultsViewController.tableView .reloadData()
     }
     
     func search(query: String, offset: Int = 0) {
-        if isSearching { return }
+        if isSearching || fetchedAllResults { return }
         isSearching = true
-        bookStore.searchGoogleBooks(query: query) { [weak self] (result: Result<[Book], Error>) in
+        bookStore.searchGoogleBooks(query: query, offset: offset) { [weak self] (result: Result<[Book], Error>) in
             self?.isSearching = false
+            if let books = try? result.get(), books.isEmpty {
+                self?.fetchedAllResults = true
+            }
             DispatchQueue.main.async { [weak self] in
                 self?.searchResultsViewController.handle(result: result)
             }
