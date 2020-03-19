@@ -11,10 +11,12 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    var isSearching = false
+    var fetchedAllResults = false
     let bookStore: BookStore
     let searchResultsViewController: SearchResultsViewController
-    let noResultsView = NoResultsView()
     let searchController: UISearchController
+    var lastQuery: String?
     
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -40,24 +42,14 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController.searchResultsUpdater = self
+        self.searchResultsViewController.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Books"
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         
-        
         definesPresentationContext = true
         view.backgroundColor = .white
-        view.addSubview(noResultsView)
-        noResultsView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            noResultsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            noResultsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            noResultsView.topAnchor.constraint(equalTo: view.topAnchor),
-            noResultsView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        noResultsView.isHidden = true
     }
     
     func returnTrue() -> Bool {
@@ -69,25 +61,41 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
-        bookStore.search(query: query) { [weak self] (result: Result<[Book], Error>) in
-            switch result {
-            case let .success(books):
-                self?.searchResultsViewController.books = books
-            case let .failure(error):
-                print(error)
+        lastQuery = query
+        fetchedAllResults = false
+        self.searchResultsViewController.prepareForSearch()
+        self.search(query: query)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.lastQuery = nil
+        self.fetchedAllResults = false
+        self.searchResultsViewController.prepareForSearch()
+        self.searchResultsViewController.books = []
+        self.searchResultsViewController.tableView .reloadData()
+    }
+    
+    func search(query: String, offset: Int = 0) {
+        if isSearching || fetchedAllResults { return }
+        isSearching = true
+        bookStore.searchGoogleBooks(query: query, offset: offset) { [weak self] (result: Result<[Book], Error>) in
+            self?.isSearching = false
+            if let books = try? result.get(), books.isEmpty {
+                self?.fetchedAllResults = true
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.searchResultsViewController.handle(result: result)
             }
         }
-        searchResultsViewController.tableView .reloadData()
     }
 }
 
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        if !isSearchBarEmpty {
-            noResultsView.isHidden = false
-        } else {
-            noResultsView.isHidden = true
-        }
+extension SearchViewController: SearchResultsViewControllerDelegate {
+    func didScrollToBottom() {
+        guard let query = lastQuery else { return }
+        let offset = searchResultsViewController.books.count
+        search(query: query, offset: offset)
     }
 }
+
 
