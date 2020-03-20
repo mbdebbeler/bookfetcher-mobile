@@ -12,6 +12,7 @@ import UIKit
 class NoResultsView: UIView {
     
     let label = UILabel()
+    let noResults = "No results."
 
     init() {
         super.init(frame: .zero)
@@ -24,7 +25,7 @@ class NoResultsView: UIView {
     
     private func configure() {
         self.backgroundColor = .white
-        label.text = "No results."
+        label.text = noResults
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 32)
         self.addSubview(label)

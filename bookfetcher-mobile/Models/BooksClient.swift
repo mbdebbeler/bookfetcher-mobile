@@ -8,19 +8,10 @@
 
 import Foundation
 
-/// API for getting books
 protocol BooksClient: class {
-    
-    /// searches for books
-    /// - Parameters:
-    ///   - query: what to search for
-    ///   - offset: start index to fetch more results
-    ///   - completion: fired when request completes or errors
     func search(query: String, offset: Int, completion: @escaping (Result<[Book], Error>) -> Void)
 }
 
-
-/// API for searching Google Books
 class GoogleBooksClient: BooksClient {
     
     enum GoogleBooksClientError: Error {
@@ -49,17 +40,12 @@ class GoogleBooksClient: BooksClient {
             ]
 
             guard let url = urlComponents.url else {
-                // this can never happen because our endpoint is a constant and a valid URL, so this path is not tested
                 completion(.failure(GoogleBooksClientError.invalidURL))
                 return
             }
 
-            // the completion expects (data, response, error)
-            // @escaping just means the completion will not be called until after the function finished
-            // data task takes an escaping closure - it is async
             dataTask = networkingSession.networkingTask(with: url) { (data, _, error) in
                 if let error = error {
-                    // if there's an error we pass the completion a result that is case failure with the error as an associated value
                     completion(Result<[Book], Error>.failure(error))
                     return
                 }
@@ -73,13 +59,11 @@ class GoogleBooksClient: BooksClient {
                     completion(Result<[Book], Error>.failure(error))
                 }
             }
-            // calling resume starts the data task
             dataTask?.resume()
         }
     }
 }
 
-/// wrapper around networking to allow mocking
 protocol NetworkingSession {
     func networkingTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkingDataTask
 }
@@ -90,7 +74,6 @@ extension URLSession: NetworkingSession {
     }
 }
 
-/// wrapper around dataTask to allow mocking
 protocol NetworkingDataTask {
     func cancel()
     func resume()

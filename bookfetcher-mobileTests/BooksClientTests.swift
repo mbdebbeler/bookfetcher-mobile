@@ -27,18 +27,15 @@ class GoogleBooksClientTest: XCTestCase {
     }
     
     func testSearchReturnsResultsFromTheNetwork() {
-        // arrange
         let expectedResults = BookResponse(items: [.mock()])
         let encoder = JSONEncoder()
         let data = try! encoder.encode(expectedResults)
         mockNetworkingSession.data = data
         let expect = expectation(description: "wait for completion")
-        
-        // act
+    
         systemUnderTest.search(query: "test query") { (result: Result<[Book], Error>) in
             let actualResults = try! result.get()
             
-            // assert
             XCTAssertEqual(actualResults, expectedResults.items, "it returns a decoded BookResponse when it gets back valid data")
             expect.fulfill()
         }
@@ -46,18 +43,17 @@ class GoogleBooksClientTest: XCTestCase {
     }
     
     func testSearchReturnsEmptyArrayIfResponseItemsIsNil() {
-          // arrange
+
           let expectedResults = BookResponse(items: nil)
           let encoder = JSONEncoder()
           let data = try! encoder.encode(expectedResults)
           mockNetworkingSession.data = data
           let expect = expectation(description: "wait for completion")
           
-          // act
           systemUnderTest.search(query: "test query") { (result: Result<[Book], Error>) in
               let actualResults = try! result.get()
               
-              // assert
+
               XCTAssertEqual(actualResults, [], "it returns an empty array when query returns no items")
               expect.fulfill()
           }
@@ -66,18 +62,14 @@ class GoogleBooksClientTest: XCTestCase {
     
     
     func testSearchReturnsErrorIfNetworkingError() {
-        // arrange
         let mockError = MockError()
         mockNetworkingSession.error = mockError
         let expect = expectation(description: "wait for completion")
-        
-        // act
+    
         systemUnderTest.search(query: "test query") { (result: Result<[Book], Error>) in
-            // assert
             switch result {
             case .success: XCTFail()
             case let .failure(error):
-                // if the cast fails, error will be nil, and if it succeeds, it will be a MockError
                 XCTAssertEqual(error as? MockError, mockError, "it returns the error")
             }
             expect.fulfill()
@@ -86,18 +78,14 @@ class GoogleBooksClientTest: XCTestCase {
     }
     
     func testSearchReturnsErrorIfDecodingError() {
-        // arrange
         let data = Data()
         mockNetworkingSession.data = data
         let expect = expectation(description: "wait for completion")
-        
-        // act
+    
         systemUnderTest.search(query: "test query") { (result: Result<[Book], Error>) in
-            // assert
             switch result {
             case .success: XCTFail()
             case let .failure(error):
-                // if the cast fails, error will be nil, and if it succeeds, it will be a DecodingError
                 XCTAssertNotNil(error as? DecodingError, "it returns a decoding error for invalid data")
             }
             expect.fulfill()
@@ -106,13 +94,10 @@ class GoogleBooksClientTest: XCTestCase {
     }
     
     func testSearchReturnsErrorIfNoData() {
-        // arrange
         mockNetworkingSession.data = nil
         let expect = expectation(description: "wait for completion")
-        
-        // act
+    
         systemUnderTest.search(query: "test query") { (result: Result<[Book], Error>) in
-            // assert
             switch result {
             case .success: XCTFail()
             case let .failure(error):
@@ -128,30 +113,23 @@ class GoogleBooksClientTest: XCTestCase {
     }
     
     func testSearchCancelsExistingRequests() {
-        // arrange
         let task = MockNetworkingDataTask()
         systemUnderTest.dataTask = task
-        
-        // act
+    
         systemUnderTest.search(query: "test") { _  in }
-        
-        // assert
+    
         XCTAssertEqual(task.cancelWasCalled, true, "it calls cancel on current data task when search is called again")
     }
     
     func testSearchSetsDataTaskToBeNetworkingDataTask() {
-        // act
         systemUnderTest.search(query: "test") { _  in }
-        
-        // assert
+    
         XCTAssertTrue(systemUnderTest.dataTask as? MockNetworkingDataTask === mockNetworkingSession.mockNetworkingDataTask, "it sets data task to be the most recent session data task")
     }
     
-    func testSearchCallsResumeOnDataTask() {
-        // act
+func testSearchCallsResumeOnDataTask() {
         systemUnderTest.search(query: "test") { _  in }
-        
-        // assert
+    
         XCTAssertEqual((systemUnderTest.dataTask as? MockNetworkingDataTask)?.resumeWasCalled, true, "it calls resume on dataTask")
     }
 
