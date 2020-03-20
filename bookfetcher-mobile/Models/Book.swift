@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Book: Decodable {
-    struct VolumeInfo: Decodable {
+struct Book: Codable, Equatable {
+    struct VolumeInfo: Codable, Equatable {
         let title: String
         let authors: [String]?
         let imageLinks: [String: URL]?
@@ -27,6 +27,6 @@ struct Book: Decodable {
     }
 }
 
-struct BookResponse: Decodable {
+struct BookResponse: Codable {
     let items: [Book]?
 }
