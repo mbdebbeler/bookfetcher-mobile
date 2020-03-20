@@ -13,22 +13,14 @@ class SearchViewController: UIViewController {
     
     var isSearching = false
     var fetchedAllResults = false
-    let bookStore: BookStore
+    let booksClient: BooksClient
     let searchResultsViewController: SearchResultsViewController
     let searchController: UISearchController
     var lastQuery: String?
     
-    var isSearchBarEmpty: Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    var isFiltering: Bool {
-        return searchController.isActive && !isSearchBarEmpty
-    }
-    
-    init(bookStore: BookStore) {
-        self.bookStore = bookStore
-        self.searchResultsViewController = SearchResultsViewController(bookStore: bookStore)
+    init(booksClient: BooksClient) {
+        self.booksClient = booksClient
+        self.searchResultsViewController = SearchResultsViewController()
         self.searchController = UISearchController(searchResultsController: searchResultsViewController)
         super.init(nibName: nil, bundle: nil)
         tabBarItem.image = UIImage(systemName: "magnifyingglass")
@@ -59,6 +51,7 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
         lastQuery = query
@@ -71,14 +64,12 @@ extension SearchViewController: UISearchBarDelegate {
         self.lastQuery = nil
         self.fetchedAllResults = false
         self.searchResultsViewController.prepareForSearch()
-        self.searchResultsViewController.books = []
-        self.searchResultsViewController.tableView .reloadData()
     }
     
     func search(query: String, offset: Int = 0) {
         if isSearching || fetchedAllResults { return }
         isSearching = true
-        bookStore.searchGoogleBooks(query: query, offset: offset) { [weak self] (result: Result<[Book], Error>) in
+        booksClient.search(query: query, offset: offset) { [weak self] (result: Result<[Book], Error>) in
             self?.isSearching = false
             if let books = try? result.get(), books.isEmpty {
                 self?.fetchedAllResults = true
@@ -91,6 +82,7 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 extension SearchViewController: SearchResultsViewControllerDelegate {
+    
     func didScrollToBottom() {
         guard let query = lastQuery else { return }
         let offset = searchResultsViewController.books.count

@@ -17,14 +17,6 @@ class SearchResultsViewController: UIViewController {
     let errorView = ErrorView()
     var books: [Book] = []
     
-    init(bookStore: BookStore) {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .white
@@ -52,6 +44,7 @@ class SearchResultsViewController: UIViewController {
     
     func prepareForSearch() {
         books = []
+        tableView.reloadData()
         loadingView.isHidden = false
         noResultsView.isHidden = true
         errorView.isHidden = true
@@ -98,7 +91,7 @@ extension SearchResultsViewController: UITableViewDataSource {
         if let thumbnailImageURL = book.thumbnailImageURL {
             cell.thumbnailImageView.load(url: thumbnailImageURL)
         } else {
-            cell.thumbnailImageView.image = UIImage(named: "sad")
+            cell.thumbnailImageView.image = UIImage(systemName: "book.circle.fill")
         }
         return cell
     }
@@ -110,6 +103,7 @@ extension SearchResultsViewController: UITableViewDataSource {
 }
 
 extension SearchResultsViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(books[indexPath.row].title)
@@ -119,7 +113,7 @@ extension SearchResultsViewController: UITableViewDelegate {
         let height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
-        if distanceFromBottom < height {
+        if distanceFromBottom <= height {
             delegate?.didScrollToBottom()
         }
     }

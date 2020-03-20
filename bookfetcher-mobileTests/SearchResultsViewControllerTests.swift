@@ -143,7 +143,7 @@ class SearchResultsViewControllerTest: XCTestCase {
         // arrange
         let expectedAuthor = "Shirley Jackson"
         let expectedTitle = "We Have Always Lived in the Castle"
-        let expectedImage = UIImage(named: "sad")
+        let expectedImage = UIImage(systemName: "book.circle.fill")
         systemUnderTest.books = [.mock()]
         let tableView = UITableView()
         tableView.register(BookCell.self, forCellReuseIdentifier: String(describing: BookCell.self))
@@ -198,7 +198,6 @@ class SearchResultsViewControllerTest: XCTestCase {
 }
 
 extension Book {
-    
     static func mock(title: String = "We Have Always Lived in the Castle",
                      authors: [String]? = ["Shirley Jackson"],
                      imageLinks: [String: URL]? = nil,
@@ -206,7 +205,6 @@ extension Book {
         let volumeInfo = VolumeInfo(title: title, authors: authors, imageLinks: imageLinks, publisher: publisher)
         return Book(volumeInfo: volumeInfo)
     }
-    
 }
 
 private func buildNewError(code: Int, description: String) -> NSError {
@@ -215,10 +213,7 @@ private func buildNewError(code: Int, description: String) -> NSError {
     ])
 }
 
-struct MockError: Error {
-    let _code: Int
-    let localizedDescription: String
-}
+struct MockError: Error, Equatable {}
 
 class MockSearchResultsViewControllerDelegate: SearchResultsViewControllerDelegate {
     
