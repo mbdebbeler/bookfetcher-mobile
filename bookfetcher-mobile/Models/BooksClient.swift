@@ -23,7 +23,6 @@ protocol BooksClient: class {
 /// API for searching Google Books
 class GoogleBooksClient: BooksClient {
     
-    
     enum GoogleBooksClientError: Error {
         case unableToConnect
         case invalidURL
@@ -57,7 +56,7 @@ class GoogleBooksClient: BooksClient {
 
             // the completion expects (data, response, error)
             // @escaping just means the completion will not be called until after the function finished
-            // data task takes an escaping closure - it is async. map, filter, take closures but they are NOT escaping they run right away
+            // data task takes an escaping closure - it is async
             dataTask = networkingSession.networkingTask(with: url) { (data, _, error) in
                 if let error = error {
                     // if there's an error we pass the completion a result that is case failure with the error as an associated value
@@ -97,6 +96,4 @@ protocol NetworkingDataTask {
     func resume()
 }
 
-extension URLSessionDataTask: NetworkingDataTask {
-    
-}
+extension URLSessionDataTask: NetworkingDataTask {}
