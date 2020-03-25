@@ -52,7 +52,7 @@ extension BookTableViewController: UITableViewDataSource {
         cell.titleLabel.text = book.title
         cell.authorLabel.text = book.authors
         if let thumbnailImageURL = book.thumbnailImageURL {
-            cell.thumbnailImageView.load(url: thumbnailImageURL)
+            ImageFetcher().load(url: thumbnailImageURL, into: cell.thumbnailImageView)
         } else {
             cell.thumbnailImageView.image = UIImage(systemName: "book.circle.fill")
         }
