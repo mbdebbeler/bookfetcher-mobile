@@ -28,13 +28,21 @@ extension UIView {
     
 }
 
-extension UIImageView {
+class CustomImageView: UIImageView {
+    
+    let imageCache = NSCache<NSString, UIImage>()
+    
     func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+            self.image = cachedImage
+        } else {
+            DispatchQueue.global().async { [weak self] in
+                if let data = try? Data(contentsOf: url) {
+                    if let imageToCache = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.imageCache.setObject(imageToCache, forKey: url.absoluteString as NSString)
+                            self?.image = imageToCache
+                        }
                     }
                 }
             }

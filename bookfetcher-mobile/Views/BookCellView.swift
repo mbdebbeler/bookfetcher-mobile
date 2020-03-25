@@ -12,7 +12,7 @@ import UIKit
 class BookCell: UITableViewCell {
     
     let containerView = UIView()
-    let thumbnailImageView = UIImageView()
+    let thumbnailImageView = CustomImageView()
     let titleLabel = UILabel()
     let authorLabel = UILabel()
     

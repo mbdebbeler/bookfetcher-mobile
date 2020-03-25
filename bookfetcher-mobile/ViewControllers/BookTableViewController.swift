@@ -69,7 +69,6 @@ extension BookTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(books[indexPath.row].title)
     }
     
      func scrollViewDidScroll(_ scrollView: UIScrollView) {
