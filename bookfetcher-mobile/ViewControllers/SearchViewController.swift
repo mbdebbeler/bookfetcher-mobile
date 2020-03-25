@@ -44,10 +44,6 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .white
     }
     
-    func returnTrue() -> Bool {
-        return true
-    }
-    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -63,7 +59,13 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.lastQuery = nil
         self.fetchedAllResults = false
-        self.searchResultsViewController.prepareForSearch()
+        self.searchResultsViewController.clearSearch()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.searchResultsViewController.clearSearch()
+        }
     }
     
     func search(query: String, offset: Int = 0) {

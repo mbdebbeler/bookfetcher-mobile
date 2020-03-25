@@ -10,14 +10,14 @@ import Foundation
 
 struct Book: Codable, Equatable {
     struct VolumeInfo: Codable, Equatable {
-        let title: String
+        let title: String?
         let authors: [String]?
         let imageLinks: [String: URL]?
         let publisher: String?
     }
     let volumeInfo: VolumeInfo
     var title: String {
-        return volumeInfo.title
+        return volumeInfo.title ?? ""
     }
     var authors: String {
         return volumeInfo.authors?.joined(separator: ", ") ?? volumeInfo.publisher ?? ""
