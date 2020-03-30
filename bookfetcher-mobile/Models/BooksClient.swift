@@ -12,6 +12,32 @@ protocol BooksClient: class {
     func search(query: String, offset: Int, completion: @escaping (Result<[Book], Error>) -> Void)
 }
 
+class LocalBooksClient: BooksClient {
+    enum LocalBooksClientError: Error {
+        case noLocalData
+    }
+    
+    func search(query: String, offset: Int = 0, completion: @escaping (Result<[Book], Error>) -> Void) {
+        do {
+            let data = try getLocalJSONResponse()
+            let decoder = JSONDecoder()
+            let bookResponse = try decoder.decode(BookResponse.self, from: data)
+            completion(Result.success(bookResponse.items ?? []))
+        } catch let error {
+            let result = Result<[Book], Error>.failure(error)
+            completion(result)
+        }
+    }
+    
+    func getLocalJSONResponse() throws -> Data {
+        guard let url: URL = Bundle.main.url(forResource: "staticResults", withExtension: "json") else {
+            throw LocalBooksClientError.noLocalData
+        }
+        return try Data(contentsOf: url)
+    }
+}
+
+
 class GoogleBooksClient: BooksClient {
     
     enum GoogleBooksClientError: Error {

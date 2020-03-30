@@ -1,0 +1,804 @@
+{
+ "kind": "books#volumes",
+ "totalItems": 1464,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "lp2zCAAAQBAJ",
+   "etag": "ZGQtNB2Svdk",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/lp2zCAAAQBAJ",
+   "volumeInfo": {
+    "title": "Hangsaman",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "Elizabeth S. Poland",
+    "publishedDate": "1951-01-01",
+    "description": "HANGSAMAN is Miss Jackson's second novel. The story is a simple one but the overtones are immediately present. \"Natalie Waite who was seventeen years old but who felt that she had been truly conscious only since she was about fifteen lived in an odd corner of a world of sound and sight, past the daily voices of her father and mother and their incomprehensible actions.\" In a few graphic pages, the family is before us—Arnold Waite, a writer, egotistical and embittered; his wife, the complaining martyr; Bud, the younger brother who has not yet felt the need to establish his independence; and Natalie, in the nightmare of being seventeen. The Sunday afternoon cocktail party, to which Arnold Waite has invited his literary friends and neighbors, serves to etch in the details of this family's life, and to draw Natalie into the vortex. The story concentrates on the next few critical months in Natalie's life, away at college, where each experience reproduces on a larger scale the crucial failure of her emotional life at home. With a mounting tension rising from character and situation as well as the particular magic of which Miss Jackson is master, the novel proceeds inexorably to the stinging melodrama of its conclusion. The bitter cruelty of the passage from adolescence to womanhood, of a sensitive and lonely girl caught in a world not of her own devising, is a theme well suited to Miss Jackson's brilliant talent.",
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "printType": "BOOK",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.1.0.preview.2",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=lp2zCAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=lp2zCAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=lp2zCAAAQBAJ&dq=hangsaman&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=lp2zCAAAQBAJ&dq=hangsaman&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hangsaman.html?hl=&id=lp2zCAAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true
+    },
+    "pdf": {
+     "isAvailable": true
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=lp2zCAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "HANGSAMAN is Miss Jackson&#39;s second novel. The story is a simple one but the overtones are immediately present."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "PepOyzmFHNwC",
+   "etag": "0hCzFVZNyU8",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/PepOyzmFHNwC",
+   "volumeInfo": {
+    "title": "Hangsaman",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "Penguin",
+    "publishedDate": "2013-06-25",
+    "description": "Shirley Jackson's chilling second novel, based on her own experiences and an actual mysterious disappearance Seventeen-year-old Natalie Waite longs to escape home for college. Her father is a domineering and egotistical writer who keeps a tight rein on Natalie and her long-suffering mother. When Natalie finally does get away, however, college life doesn’t bring the happiness she expected. Little by little, Natalie is no longer certain of anything—even where reality ends and her dark imaginings begin. Chilling and suspenseful, Hangsaman is loosely based on the real-life disappearance of a Bennington College sophomore in 1946. For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9781101616765"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "1101616768"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 240,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 3.0,
+    "ratingsCount": 10,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.4.4.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=PepOyzmFHNwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=PepOyzmFHNwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=PepOyzmFHNwC&printsec=frontcover&dq=hangsaman&hl=&cd=2&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=PepOyzmFHNwC&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=PepOyzmFHNwC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 9.99,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 9.99,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=PepOyzmFHNwC&rdid=book-PepOyzmFHNwC&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 9990000.0,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 9990000.0,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/Hangsaman-sample-epub.acsm?id=PepOyzmFHNwC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=PepOyzmFHNwC&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "EBQmCwAAQBAJ",
+   "etag": "e3OC3jbijtU",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/EBQmCwAAQBAJ",
+   "volumeInfo": {
+    "title": "Hangsaman",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "HarperCollins",
+    "publishedDate": "2016-01-05",
+    "description": "Natalie Waite may have had a fairly normal upbringing, but her deteriorating relationship with her parents and general unhappiness leave her with an eagerness to escape her childhood when it comes time for her to leave for college at the age of seventeen. However, her new independent life and identity soon begin to seem empty as well, and the happiness and freedom she desired never seem to arrive, leaving Natalie to slowly unravel. Hangsaman is one of author Shirley Jackson’s lesser known, but critically acclaimed works. Presenting itself as a simple coming-of-age tale, Jackson deftly manipulates her heroine’s delicate instability to craft a uniquely suspenseful story about identity and loneliness. HarperPerennial Classics brings great works of literature to life in digital format, upholding the highest standards in ebook production and celebrating reading in all its forms. Look for more titles in the HarperPerennial Classics collection to build your digital library.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9781443451154"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "1443451150"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 225,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 3.0,
+    "ratingsCount": 10,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.6.5.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=EBQmCwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=EBQmCwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=EBQmCwAAQBAJ&dq=hangsaman&hl=&cd=3&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=EBQmCwAAQBAJ&dq=hangsaman&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hangsaman.html?hl=&id=EBQmCwAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true
+    },
+    "pdf": {
+     "isAvailable": true
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=EBQmCwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Look for more titles in the HarperPerennial Classics collection to build your digital library."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "GB8r9Klm8VAC",
+   "etag": "t6CbY/rGkbM",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/GB8r9Klm8VAC",
+   "volumeInfo": {
+    "title": "Hangsaman",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "Penguin UK",
+    "publishedDate": "2013-12-05",
+    "description": "Shirley Jackson's Hangsaman is a story of lurking disquiet and haunting disorientation, inspired by the real-life, unsolved disappearance of a female college student. 'Shirley Jackson's stories are among the most terrifying ever written' Donna Tartt, author of The Goldfinch Natalie Waite, daughter of a mediocre writer and a neurotic housewife, is increasingly unsure of her place in the world. In the midst of adolescence she senses a creeping darkness in her life, which will spread among nightmarish parties, poisonous college cliques and the manipulations of the intellectual men who surround her, as her identity gradually crumbles. This edition includes a Foreword by Francine Prose. Shirley Jackson's chilling tales have the power to unsettle and terrify unlike any other. She was born in California in 1916. When her short story The Lottery was first published in The New Yorker in 1948, readers were so horrified they sent her hate mail; it has since become one of the greatest American stories of all time. Her first novel, The Road Through the Wall, was published in the same year and was followed by five more: Hangsaman, The Bird's Nest, The Sundial, The Haunting of Hill House and We Have Always Lived in the Castle, widely seen as her masterpiece. Shirley Jackson died in her sleep at the age of 48. 'An amazing writer' Neil Gaiman 'The world of Shirley Jackson is eerie and unforgettable ... It is a place where things are not what they seem; even on a morning that is sunny and clear there is always the threat of darkness looming, of things taking a turn for the worse' A. M. Homes 'Shirley Jackson is unparalleled as a leader in the field of beautifully written, quiet, cumulative shudders' Dorothy Parker",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780141391991"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "0141391995"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 280,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 3.0,
+    "ratingsCount": 10,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.8.9.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=GB8r9Klm8VAC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=GB8r9Klm8VAC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=GB8r9Klm8VAC&dq=hangsaman&hl=&cd=4&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=GB8r9Klm8VAC&dq=hangsaman&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hangsaman.html?hl=&id=GB8r9Klm8VAC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true
+    },
+    "pdf": {
+     "isAvailable": true
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=GB8r9Klm8VAC&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "This edition includes a Foreword by Francine Prose. Shirley Jackson&#39;s chilling tales have the power to unsettle and terrify unlike any other. She was born in California in 1916."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "DT1fwAEACAAJ",
+   "etag": "4AewH+hh800",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/DT1fwAEACAAJ",
+   "volumeInfo": {
+    "title": "Hangsaman",
+    "publishedDate": "1951",
+    "industryIdentifiers": [
+     {
+      "type": "OTHER",
+      "identifier": "OCLC:1078491746"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 280,
+    "printType": "BOOK",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=DT1fwAEACAAJ&dq=hangsaman&hl=&cd=5&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=DT1fwAEACAAJ&dq=hangsaman&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hangsaman.html?hl=&id=DT1fwAEACAAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=DT1fwAEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "EV9gvgEACAAJ",
+   "etag": "EuuDz6cF9zU",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/EV9gvgEACAAJ",
+   "volumeInfo": {
+    "title": "With Stick and String",
+    "subtitle": "Adventures with Bow and Arrow",
+    "authors": [
+     "Lon L. Emerick"
+    ],
+    "publishedDate": "1998-10",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "0965057798"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9780965057790"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 92,
+    "printType": "BOOK",
+    "averageRating": 5.0,
+    "ratingsCount": 1,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=EV9gvgEACAAJ&dq=hangsaman&hl=&cd=6&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=EV9gvgEACAAJ&dq=hangsaman&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/With_Stick_and_String.html?hl=&id=EV9gvgEACAAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=EV9gvgEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "The Road Through the Wall: Shirley Jackson&#39;s first novel tells the tale of Pepper Street and its houses and families."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "pOhhAwAAQBAJ",
+   "etag": "Vw7gqhfcHII",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/pOhhAwAAQBAJ",
+   "volumeInfo": {
+    "title": "The Haunting of Hill House",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "Penguin",
+    "publishedDate": "2013-10-01",
+    "description": "The greatest haunted house story ever written, the inspiration for a 10-part Netflix series directed by Mike Flanagan and starring Michiel Huisman, Carla Gugino, and Timothy Hutton First published in 1959, Shirley Jackson's The Haunting of Hill House has been hailed as a perfect work of unnerving terror. It is the story of four seekers who arrive at a notoriously unfriendly pile called Hill House: Dr. Montague, an occult scholar looking for solid evidence of a \"haunting\"; Theodora, his lighthearted assistant; Eleanor, a friendless, fragile young woman well acquainted with poltergeists; and Luke, the future heir of Hill House. At first, their stay seems destined to be merely a spooky encounter with inexplicable phenomena. But Hill House is gathering its powers—and soon it will choose one of them to make its own. For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9781101663004"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "1101663006"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 288,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 2.0,
+    "ratingsCount": 3,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "0.3.2.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=pOhhAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=pOhhAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=pOhhAwAAQBAJ&printsec=frontcover&dq=hangsaman&hl=&cd=7&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=pOhhAwAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=pOhhAwAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 12.99,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 12.99,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=pOhhAwAAQBAJ&rdid=book-pOhhAwAAQBAJ&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 1.299E7,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 1.299E7,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/The_Haunting_of_Hill_House-sample-epub.acsm?id=pOhhAwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=pOhhAwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "It is the story of four seekers who arrive at a notoriously unfriendly pile called Hill House: Dr. Montague, an occult scholar looking for solid evidence of a &quot;haunting&quot;; Theodora, his lighthearted assistant; Eleanor, a friendless, fragile ..."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "A_AyDAAAQBAJ",
+   "etag": "fwi8SXXO7FY",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/A_AyDAAAQBAJ",
+   "volumeInfo": {
+    "title": "Shirley Jackson, Influences and Confluences",
+    "authors": [
+     "Melanie R. Anderson",
+     "Lisa Kröger"
+    ],
+    "publisher": "Routledge",
+    "publishedDate": "2016-05-20",
+    "description": "The popularity of such widely known works as \"The Lottery\" and The Haunting of Hill House has tended to obscure the extent of Shirley Jackson's literary output, which includes six novels, a prodigious number of short stories, and two volumes of domestic sketches. Organized around the themes of influence and intertextuality, this collection places Jackson firmly within the literary cohort of the 1950s. The contributors investigate the work that informed her own fiction and discuss how Jackson inspired writers of literature and film. The collection begins with essays that tease out what Jackson's writing owes to the weird tale, detective fiction, the supernatural tradition, and folklore, among other influences. The focus then shifts to Jackson's place in American literature and the impact of her work on women's writing, campus literature, and the graphic novelist Alison Bechdel. The final two essays examine adaptations of The Haunting of Hill House and Jackson's influence on contemporary American horror cinema. Taken together, the essays offer convincing evidence that half a century following her death, readers and writers alike are still finding value in Jackson’s words.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9781317055266"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "1317055268"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": true
+    },
+    "pageCount": 218,
+    "printType": "BOOK",
+    "categories": [
+     "Literary Criticism"
+    ],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.1.0.preview.3",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=A_AyDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=A_AyDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=A_AyDAAAQBAJ&printsec=frontcover&dq=hangsaman&hl=&cd=8&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=A_AyDAAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=A_AyDAAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 47.95,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 37.64,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=A_AyDAAAQBAJ&rdid=book-A_AyDAAAQBAJ&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 4.795E7,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 3.764E7,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/Shirley_Jackson_Influences_and_Confluenc-sample-epub.acsm?id=A_AyDAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/Shirley_Jackson_Influences_and_Confluenc-sample-pdf.acsm?id=A_AyDAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=A_AyDAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Organized around the themes of influence and intertextuality, this collection places Jackson firmly within the literary cohort of the 1950s."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "qGBqzRzg2gwC",
+   "etag": "y1JSEitgdhA",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/qGBqzRzg2gwC",
+   "volumeInfo": {
+    "title": "The Road Through the Wall",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "Penguin",
+    "publishedDate": "2013-06-25",
+    "description": "The compelling novel that began Shirley Jackson's legendary career Pepper Street is a really nice, safe California neighborhood. The houses are tidy and the lawns are neatly mowed. Of course, the country club is close by, and lots of pleasant folks live there. The only problem is they knocked down the wall at the end of the street to make way for a road to a new housing development. Now, that’s not good—it’s just not good at all. Satirically exploring what happens when a smug suburban neighborhood is breached by awful, unavoidable truths, The Road Through the Wall is the tale that launched Shirley Jackson’s heralded career. For more than seventy years, Penguin has been the leading publisher of classic literature in the English-speaking world. With more than 1,700 titles, Penguin Classics represents a global bookshelf of the best works throughout history and across genres and disciplines. Readers trust the series to provide authoritative texts enhanced by introductions and notes by distinguished scholars and contemporary authors, as well as up-to-date translations by award-winning translators. From the Trade Paperback edition.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9781101616789"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "1101616784"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 208,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 5,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.3.3.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=qGBqzRzg2gwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=qGBqzRzg2gwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=qGBqzRzg2gwC&printsec=frontcover&dq=hangsaman&hl=&cd=9&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=qGBqzRzg2gwC&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=qGBqzRzg2gwC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 8.99,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 8.99,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=qGBqzRzg2gwC&rdid=book-qGBqzRzg2gwC&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 8990000.0,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 8990000.0,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/The_Road_Through_the_Wall-sample-epub.acsm?id=qGBqzRzg2gwC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=qGBqzRzg2gwC&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "The compelling novel that began Shirley Jackson&#39;s legendary career Pepper Street is a really nice, safe California neighborhood."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "fRh2aEh3ZfMC",
+   "etag": "yjbFtGXQC3k",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/fRh2aEh3ZfMC",
+   "volumeInfo": {
+    "title": "We Have Always Lived in the Castle",
+    "authors": [
+     "Shirley Jackson"
+    ],
+    "publisher": "Dramatists Play Service Inc",
+    "publishedDate": "1967",
+    "description": "THE STORY: The home of the Blackwoods near a Vermont village is a lonely, ominous abode, and Constance, the young mistress of the place, can't go out of the house without being insulted and stoned by the villagers. They have also composed a nasty s",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "0822212269"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9780822212263"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": true
+    },
+    "pageCount": 214,
+    "printType": "BOOK",
+    "categories": [
+     "Drama"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 154,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.3.0.preview.3",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=fRh2aEh3ZfMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=fRh2aEh3ZfMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=fRh2aEh3ZfMC&printsec=frontcover&dq=hangsaman&hl=&cd=10&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=fRh2aEh3ZfMC&dq=hangsaman&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/We_Have_Always_Lived_in_the_Castle.html?hl=&id=fRh2aEh3ZfMC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/We_Have_Always_Lived_in_the_Castle-sample-epub.acsm?id=fRh2aEh3ZfMC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=fRh2aEh3ZfMC&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "THE STORY: The home of the Blackwoods near a Vermont village is a lonely, ominous abode, and Constance, the young mistress of the place, can&#39;t go out of the house without being insulted and stoned by the villagers."
+   }
+  }
+ ]
+}

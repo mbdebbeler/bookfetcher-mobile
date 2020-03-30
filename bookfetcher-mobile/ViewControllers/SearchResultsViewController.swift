@@ -12,38 +12,38 @@ import UIKit
 class SearchResultsViewController: UIViewController {
     weak var delegate: SearchResultsViewControllerDelegate? {
         didSet {
-            tableView.delegate = delegate
+            tableViewController.delegate = delegate
         }
     }
-    let tableView = BookTableViewController()
+    let tableViewController = BookTableViewController()
     let loadingView = LoadingView()
     let noResultsView = NoResultsView()
     let errorView = ErrorView()
     let notConnectedErrorCode = -1009
     var books: [Book] {
-        get { tableView.books }
-        set { tableView.books = newValue }
+        get { tableViewController.books }
+        set { tableViewController.books = newValue }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addChild(tableView)
-        tableView.didMove(toParent: self)
+        self.addChild(tableViewController)
         addSubviews()
         removeAutoresizingMaskFromSubviews()
         layOutSubviewConstraints()
         hideSubviews()
+        tableViewController.didMove(toParent: self)
     }
 
     private func addSubviews() {
-        view.addSubview(tableView.view)
+        view.addSubview(tableViewController.view)
         view.addSubview(noResultsView)
         view.addSubview(loadingView)
         view.addSubview(errorView)
     }
     
     private func removeAutoresizingMaskFromSubviews() {
-        tableView.view.translatesAutoresizingMaskIntoConstraints = false
+        tableViewController.view.translatesAutoresizingMaskIntoConstraints = false
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         noResultsView.translatesAutoresizingMaskIntoConstraints = false
         errorView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ class SearchResultsViewController: UIViewController {
     
     private func layOutSubviewConstraints() {
         NSLayoutConstraint.activate(
-            tableView.view.pin(to: view) +
+            tableViewController.view.pin(to: view) +
                 loadingView.pin(to: view) +
                 noResultsView.pin(to: view) +
                 errorView.pin(to: view)
@@ -65,7 +65,7 @@ class SearchResultsViewController: UIViewController {
     }
     
     func clearSearch() {
-        tableView.books = []
+        tableViewController.books = []
         noResultsView.isHidden = true
         errorView.isHidden = true
     }
