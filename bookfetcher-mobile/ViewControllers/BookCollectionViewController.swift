@@ -14,10 +14,15 @@ class BookCollectionViewController: UIViewController {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     weak var delegate: BookCollectionViewControllerDelegate?
+    
+    var books: [Book] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("I loaded!")
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
@@ -43,12 +48,19 @@ extension BookCollectionViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return books.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SavedBookCell", for: indexPath) as! SavedBookCell
-        cell.textLabel.text = String(indexPath.row + 1)
+        let book = books[indexPath.row]
+        cell.titleLabel.text = book.title
+        cell.authorLabel.text = book.authors
+        if let thumbnailImageURL = book.thumbnailImageURL {
+            ImageFetcher().load(url: thumbnailImageURL, into: cell.thumbnailImageView)
+        } else {
+            cell.thumbnailImageView.image = UIImage(systemName: "book.circle.fill")
+        }
         return cell
     }
 }
@@ -67,7 +79,7 @@ extension BookCollectionViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let width = (collectionView.bounds.size.width - 24)/2
-        let height = CGFloat(120)
+        let height = CGFloat(280)
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView,
